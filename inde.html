@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -38,11 +39,11 @@
     <!-- home section start -->
     <section class="home" id="home">
         <div class="max-width">
-            <div class="home-content">
+            <div class="home-content contact">
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Mohamed Tafraouti</div>
                 <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="#">Hire me</a>
+                <a href="#contact">Hire me</a>  
             </div>
         </div>
     </section>
@@ -338,7 +339,9 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                    <p>
+                        
+                    </p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
@@ -371,7 +374,7 @@
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="text">Message me</div>
+                    <div class="text" id="p1">Message me</div>
                     <form class="contact" id="contact" method="POST" action="ind.php">
                         <div class="fields">
                             <div class="field name">
@@ -388,7 +391,7 @@
                             <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit" name="ajouter" onclick="validation();">Send message</button>
+                            <button type="submit" name="ajouter">Send message</button>
                         </div>
                     </form>
                     
@@ -399,7 +402,7 @@
 
     <!-- footer section start -->
     <footer>
-        <span>Created By <a href="https://www.codingnepalweb.com">CodingNepal</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+        <span>Created By <a href="#">MohamedTafraouti</a></span>
     </footer>
 
     <script src="script.js"></script>
