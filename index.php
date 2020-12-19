@@ -64,7 +64,7 @@ if ($mail->send())
     echo "
 
         <script language=javascript>
-            document.location.replace('inde.html');
+            document.location.replace('index.html');
         </script>"; 
 }
 else
