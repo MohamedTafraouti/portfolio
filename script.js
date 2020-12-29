@@ -27,9 +27,8 @@ $(document).ready(function(){
           timer: 2500
         })
     }
-    if(sessionStorage.getItem('send')!=='non')
+    elseif(sessionStorage.getItem('send')==='non')
     {
-        alert("hiiii");
         swal({
           icon: 'error',
           title: 'Oops...',
