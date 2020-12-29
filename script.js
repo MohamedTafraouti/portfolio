@@ -17,7 +17,26 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
-
+    if(sessionStorage.getItem('send')==='oui')
+    {
+        swal({
+          icon: 'success',
+          title: 'Good...',
+          text: 'Your work has been saved',
+          button: false,
+          timer: 2500
+        })
+    }
+    if(sessionStorage.getItem('send')!=='non')
+    {
+        swal({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong! Please try again',
+          button: false,
+          timer: 2500
+        })
+    }
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});

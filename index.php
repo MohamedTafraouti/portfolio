@@ -64,6 +64,7 @@ if ($mail->send())
     echo "
 
         <script language=javascript>
+            sessionStorage.setItem('send','oui');
             document.location.replace('index.html');
         </script>"; 
 }
@@ -71,7 +72,8 @@ else
 {
     echo "
         <script language=javascript>
-            document.location.replace('inde.html');
+            sessionStorage.setItem('send','non');
+            document.location.replace('index.html');
         </script>"; 
 }
 
