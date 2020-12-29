@@ -29,6 +29,7 @@ $(document).ready(function(){
     }
     if(sessionStorage.getItem('send')!=='non')
     {
+        alert("hiiii");
         swal({
           icon: 'error',
           title: 'Oops...',
