@@ -1,5 +1,5 @@
 <?php 
-	extract($_POST);
+	//extract($_POST);
 
 	/*$server='localhost';
     $user='root';
