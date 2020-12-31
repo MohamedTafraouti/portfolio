@@ -376,7 +376,7 @@
                 </div>
                 <div class="column right">
                     <div class="text" id="p1">Message me</div>
-                    <form>
+                    <form class="contact" id="contact" method="post" action="JavaScript:sendEmail();">
                         <div class="fields">
                             <div class="field name">
                                 <input id="name" type="text" name="name" placeholder="Name" required>
@@ -389,7 +389,7 @@
                             <input id="subject" type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea class="id" cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
+                            <textarea id="message" cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button">
                             <button type="submit" name="ajouter" class="ajouter">Send message</button>
@@ -406,29 +406,71 @@
         <span>Created By <a href="#">MohamedTafraouti</a></span>
     </footer>
 
-    <!-- <script src="script.js"></script> -->
-    <script>
+    <script src="script.js"></script>
+    <!-- <script>
         const form = document.querySelector("form");
         const name = document.querySelector("#name");
         const email = document.querySelector("#email");
+        const subject = document.querySelector("#subject");
+        const message = document.querySelector("#message");
 
-        form.addEventListener("submit", e => {
+        /*form.addEventListener("submit", (e) => {
             e.preventDefault();
             console.log(name.value);
-            console.log(email.value)
-            fetch("http://localhost:5000/sendmail", {
-                method: 'POST',
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({email: email.value})
-            })
-                .then(res => res.json())
-                .then(() => alert("success"))
-                .catch(err => console.log(err))
-        })
+            console.log(email.value);
+            console.log(subject.value);
+            console.log(message.value);
+            
+        })*/
+        function sendMail(){
+            /*console.log(name.value);
+            console.log(email.value);
+            console.log(subject.value);
+            console.log(message.value);*/
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "mohammad.tafraouti@gmail.com",
+            Password : "SoubhanaAllah",
+            To : 'tafraouti.mohamed96@gmail.com',
+            From : "mohammad.tafraouti@gmail.com",
+            Subject : "abc",
+            Body : "jkl" ;
+            }).then(
+              message => swal({
+                  icon: 'success',
+                  title: 'Good...',
+                  text: 'Your work has been saved',
+                  button: false,
+                  timer: 2500
+                })
+            );
+        }
+    </script> -->
+    <script>
+		const form = document.querySelector("form");
+        const name = document.querySelector("#name");
+        const email = document.querySelector("#email");
+        const subject = document.querySelector("#subject");
+        const message = document.querySelector("#message");
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "mohammad.tafraouti@gmail.com",
+            Password : "SoubhanaAllah",
+            To : 'tafraouti.mohamed96@gmail.com',
+            From : "mohammad.tafraouti@gmail.com",
+            Subject : subject.value,
+            Body : "Name : "+name.value+" || Email : "+email.value+" || Message : "+message.value
+            }).then(
+              message => swal({
+                  icon: 'success',
+                  title: 'Good...',
+                  text: 'Your work has been saved',
+                  button: false,
+                  timer: 2500
+                })
+            );
+        }
     </script>
-   
 </body>
 </html>

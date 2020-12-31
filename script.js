@@ -27,7 +27,7 @@ $(document).ready(function(){
         Email.send({
         Host : "smtp.gmail.com",
         Username : "mohammad.tafraouti@gmail.com",
-        Password : "",
+        Password : "SoubhanaAllah",
         To : 'tafraouti.mohamed96@gmail.com',
         From : "mohamedtafraouti@isp.com",
         Subject : "This is the subject",
@@ -117,4 +117,7 @@ $(document).ready(function(){
     function sendMail(){
         alert("hi");
     }
+    document.querySelector("#contact").addEventListener(()=>{
+        alert("hi");
+    })
 });
