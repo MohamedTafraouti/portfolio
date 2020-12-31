@@ -17,26 +17,24 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
-    if(sessionStorage.getItem('send')==='oui')
-    {
-        swal({
-          icon: 'success',
-          title: 'Good...',
-          text: 'Your work has been saved',
-          button: false,
-          timer: 2500
-        })
+    //send mail
+    /*function sendEmail() {
+        alert("yesssssssssssss");
+        var name = document.querySelector("name");
+        var email = document.querySelector("email");
+        var subject = document.querySelector("subject");
+        var message = document.querySelector("message");
+        Email.send({
+        Host : "smtp.gmail.com",
+        Username : "mohammad.tafraouti@gmail.com",
+        Password : "SoubhanaAllah",
+        To : 'tafraouti.mohamed96@gmail.com',
+        From : "mohamedtafraouti@isp.com",
+        Subject : "This is the subject",
+        Body : "Name : " + name + " || Email : " + email + " || Message : " + message ;
+        }).then(message => alert("yess"));
     }
-    elseif(sessionStorage.getItem('send')==='non')
-    {
-        swal({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong! Please try again',
-          button: false,
-          timer: 2500
-        })
-    }
+    */
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
@@ -93,6 +91,33 @@ $(document).ready(function(){
             }
         }
     });
+    /*if(sessionStorage.getItem('send')==='oui')
+    {
+        swal({
+          icon: 'success',
+          title: 'Good...',
+          text: 'Your work has been saved',
+          button: false,
+          timer: 2500
+        })
+        sessionStorage.setItem('send','');
+    }
+    elseif(sessionStorage.getItem('send')==='non')
+    {
+        swal({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong! Please try again',
+          button: false,
+          timer: 2500
+        })
+        sessionStorage.setItem('send','');
+    }*/
 
-    
+    function sendMail(){
+        alert("hi");
+    }
+    document.querySelector("#contact").addEventListener(()=>{
+        alert("hi");
+    })
 });
