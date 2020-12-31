@@ -52,15 +52,13 @@
 				</div>
                 <div class="column left">
 
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qW_iN7PMt4I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/OGJYPr7ibcs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     
                 </div>
                 
             </div>
         </div>
     </section>
-    
-    <!-- teams section start -->
     
     <!-- contact section start -->
     <section class="contact" id="contact">
@@ -69,7 +67,9 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum corporis fuga corrupti. Doloribus quis soluta nesciunt veritatis vitae nobis?</p>
+                    <p>
+                        
+                    </p>
                     <div class="icons">
                         <div class="row">
                             <i class="fas fa-user"></i>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.linkedin.com/in/tafraouti-mohamed" target="_target"><i class="fab fa-linkedin-in"></i></a> 
                             <div class="info">
                                 <div class="head">Linkedin</div>
                                 <div class="sub-title">linkedin.com/in/tafraouti-mohamed</div>
@@ -102,24 +102,24 @@
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="text">Message me</div>
-                    <form class="contact" id="contact" method="POST" action="ind.php">
+                    <div class="text" id="p1">Message me</div>
+                    <form class="contact" id="contact" method="post" action="JavaScript:sendEmail();">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" name="name" placeholder="Name" required>
+                                <input id="name" type="text" name="name" placeholder="Name" required>
                             </div>
                             <div class="field email">
-                                <input type="email" name="email" placeholder="Email" required>
+                                <input id="email" type="email" name="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" name="subject" placeholder="Subject" required>
+                            <input id="subject" type="text" name="subject" placeholder="Subject" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
+                            <textarea id="message" cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit" name="ajouter" onclick="validation();">Send message</button>
+                            <button type="submit" name="ajouter" class="ajouter">Send message</button>
                         </div>
                     </form>
                     
@@ -134,5 +134,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        const form = document.querySelector("form");
+        const name = document.querySelector("#name");
+        const email = document.querySelector("#email");
+        const subject = document.querySelector("#subject");
+        const message = document.querySelector("#message");
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.gmail.com",
+            Username : "mohammad.tafraouti@gmail.com",
+            Password : "SoubhanaAllah",
+            To : 'tafraouti.mohamed96@gmail.com',
+            From : "mohammad.tafraouti@gmail.com",
+            Subject : subject.value,
+            Body : "Name : "+name.value+" || Email : "+email.value+" || Message : "+message.value
+            }).then(
+              message => swal({
+                  icon: 'success',
+                  title: 'Good...',
+                  text: 'Your work has been saved',
+                  button: false,
+                  timer: 2500
+                })
+            );
+        }
+    </script>
 </body>
 </html>
