@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    
 
 </head>
 <body>
@@ -22,13 +23,13 @@
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+            <div class="logo"><a href="#">mohamed<span>tafraouti.com</span></a></div>
             <ul class="menu">
                 <li><a href="#home" class="menu-btn">Home</a></li>
                 <li><a href="#about" class="menu-btn">About</a></li>
                 <li><a href="#services" class="menu-btn">Services</a></li>
                 <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#teams" class="menu-btn">Projects</a></li>
+                <li><a href="#Portfolio" class="menu-btn">Portfolio</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
@@ -244,7 +245,7 @@
         </div>
     </section>
     <!-- teams section start -->
-    <section class="teams" id="teams">
+    <section class="teams" id="Portfolio">
         <div class="max-width">
             <h2 class="title">My Prejects</h2>
             <div class="carousel owl-carousel">
@@ -257,12 +258,12 @@
                         </div>
                     </div>
                 </a>
-                <a href="project2.html">
+                <a href="GestionPatrimoine/index.html">
                     <div class="card">
                         <div class="box" style="color: white">
-                            <img src="images/profile-2.jpeg" alt="">
-                            <div class="text">2 name</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <img src="images/patrimoine.jpeg" alt="">
+                            <div class="text">Asset Management</div>
+                            <p>Desktop Apps with C#(framwork bunifu) language and SQL Server</p>
                         </div>
                     </div>
                 </a>
@@ -376,62 +377,223 @@
                 </div>
                 <div class="column right">
                     <div class="text" id="p1">Message me</div>
-                    <form class="contact" id="contact" method="post" action="JavaScript:sendEmail();">
+                    
+                    <form class="php-email-form contact" id="contact" method="post" action="https://formspree.io/f/mleokbey">
                         <div class="fields">
                             <div class="field name">
                                 <input id="name" type="text" name="name" placeholder="Name" required>
+                                <div class="validate"></div>
                             </div>
                             <div class="field email">
                                 <input id="email" type="email" name="email" placeholder="Email" required>
+                                <div class="validate"></div>
                             </div>
                         </div>
                         <div class="field">
                             <input id="subject" type="text" name="subject" placeholder="Subject" required>
+                            <div class="validate"></div>
                         </div>
                         <div class="field textarea">
                             <textarea id="message" cols="30" rows="10" name="message" placeholder="Message.." required></textarea>
+                            <div class="validate"></div>
+                        </div>
+                        <div>
+                            <div class="loading"></div>
+                            <div class="error-message"></div>
+                            <div class="sent-message"></div>
                         </div>
                         <div class="button">
                             <button type="submit" name="ajouter" class="ajouter">Send message</button>
                         </div>
                     </form>
-                    
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- footer section start -->
     <footer>
         <span>Created By <a href="#">MohamedTafraouti</a></span>
     </footer>
 
     <script src="script.js"></script>
     <script>
-		const form = document.querySelector("form");
-        const name = document.querySelector("#name");
-        const email = document.querySelector("#email");
-        const subject = document.querySelector("#subject");
-        const message = document.querySelector("#message");
-        function sendEmail(){
-            Email.send({
-            Host : "smtp.gmail.com",
-            Username : "mohammad.tafraouti@gmail.com",
-            Password : "",
-            To : 'tafraouti.mohamed96@gmail.com',
-            From : "mohammad.tafraouti@gmail.com",
-            Subject : subject.value,
-            Body : "Name : "+name.value+" || Email : "+email.value+" || Message : "+message.value
-            }).then(
-              message => swal({
-                  icon: 'success',
-                  title: 'Good...',
-                  text: 'Your work has been saved',
-                  button: false,
-                  timer: 2500
-                })
-            );
+        
+        // $("#sendMessage").on("click", function() {
+            
+        // });
+
+		// const form = document.querySelector("form");
+        // const name = document.querySelector("#name");
+        // const email = document.querySelector("#email");
+        // const subject = document.querySelector("#subject");
+        // const message = document.querySelector("#message");
+        // function sendEmail(){
+        //     document.location.replace('index.html');
+        //     /*Email.send({
+        //     Host : "smtp.gmail.com",
+        //     Username : "mohammad.tafraouti@gmail.com",
+        //     Password : "SoubhanaAllah",
+        //     To : 'mohammad.tafraouti@gmail.com',
+        //     From : "mohammad.tafraouti@gmail.com",
+        //     Subject : subject.value,
+        //     Body : "Name : "+name.value+" || Email : "+email.value+" || Message : "+message.value
+        //     }).then(
+        //       message => swal({
+        //           icon: 'success',
+        //           title: 'Good...',
+        //           text: 'Your work has been saved',
+        //           button: false,
+        //           timer: 2500
+        //         })
+        //     );*/
+        // }
+        !(function($) {
+    "use strict";
+  
+    $('form.php-email-form').submit(function(e) {
+      e.preventDefault();
+      
+      var f = $(this).find('.form-group'),
+        ferror = false,
+        emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+  
+      f.children('input').each(function() { // run all inputs
+       
+        var i = $(this); // current input
+        var rule = i.attr('data-rule');
+  
+        if (rule !== undefined) {
+          var ierror = false; // error flag for current input
+          var pos = rule.indexOf(':', 0);
+          if (pos >= 0) {
+            var exp = rule.substr(pos + 1, rule.length);
+            rule = rule.substr(0, pos);
+          } else {
+            rule = rule.substr(pos + 1, rule.length);
+          }
+  
+          switch (rule) {
+            case 'required':
+              if (i.val() === '') {
+                ferror = ierror = true;
+              }
+              break;
+  
+            case 'minlen':
+              if (i.val().length < parseInt(exp)) {
+                ferror = ierror = true;
+              }
+              break;
+  
+            case 'email':
+              if (!emailExp.test(i.val())) {
+                ferror = ierror = true;
+              }
+              break;
+  
+            case 'checked':
+              if (! i.is(':checked')) {
+                ferror = ierror = true;
+              }
+              break;
+  
+            case 'regexp':
+              exp = new RegExp(exp);
+              if (!exp.test(i.val())) {
+                ferror = ierror = true;
+              }
+              break;
+          }
+          i.next('.validate').html((ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
         }
+      });
+      f.children('textarea').each(function() { // run all inputs
+  
+        var i = $(this); // current input
+        var rule = i.attr('data-rule');
+  
+        if (rule !== undefined) {
+          var ierror = false; // error flag for current input
+          var pos = rule.indexOf(':', 0);
+          if (pos >= 0) {
+            var exp = rule.substr(pos + 1, rule.length);
+            rule = rule.substr(0, pos);
+          } else {
+            rule = rule.substr(pos + 1, rule.length);
+          }
+  
+          switch (rule) {
+            case 'required':
+              if (i.val() === '') {
+                ferror = ierror = true;
+              }
+              break;
+  
+            case 'minlen':
+              if (i.val().length < parseInt(exp)) {
+                ferror = ierror = true;
+              }
+              break;
+          }
+          i.next('.validate').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
+        }
+      });
+      if (ferror) return false;
+  
+      var this_form = $(this);
+      var action = $(this).attr('action');
+  
+      if( ! action ) {
+        this_form.find('.loading').slideUp();
+        this_form.find('.error-message').slideDown().html('The form action property is not set!');
+        return false;
+      }
+      
+      this_form.find('.sent-message').slideUp();
+      this_form.find('.error-message').slideUp();
+      this_form.find('.loading').slideDown();
+  
+      if ( $(this).data('recaptcha-site-key') ) {
+        var recaptcha_site_key = $(this).data('recaptcha-site-key');
+        grecaptcha.ready(function() {
+          grecaptcha.execute(recaptcha_site_key, {action: 'php_email_form_submit'}).then(function(token) {
+            php_email_form_submit(this_form,action,this_form.serialize() + '&recaptcha-response=' + token);
+          });
+        });
+      } else {
+        php_email_form_submit(this_form,action,this_form.serialize());
+      }
+      
+      return true;
+    });
+  
+    function php_email_form_submit(this_form, action, data) {
+      $.ajax({
+        type: "POST",
+        url: action,
+        data: data,
+        timeout: 40000
+      }).done( function(msg){
+        if (msg == 'OK') {
+          this_form.find('.loading').slideUp();
+          this_form.find('.sent-message').slideDown();
+          this_form.find("input:not(input[type=submit]), textarea").val('');
+        } else {
+          this_form.find('.loading').slideUp();
+          if(!msg) {
+            msg = 'Form submission failed and no error message returned from: ' + action + '<br>';
+          }
+          this_form.find('.error-message').slideDown().html(msg);
+        }
+      }).fail( function(data){
+        console.log(data);
+        var error_msg = "Your message has been sent. Thank you!<br>";
+        
+        this_form.find('.loading').slideUp();
+        this_form.find('.error-message').slideDown().html(error_msg);
+      });
+    }
+  
+  })(jQuery);
     </script>
 </body>
 </html>
