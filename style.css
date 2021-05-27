@@ -442,7 +442,7 @@ section .title::after{
 
 /* teams section styling */
 .teams .title::after{
-    content: "-- 6 Web - 3 Desktop --";
+    content: "-- 6 Web - 4 Desktop --";
 }
 .teams .carousel .card{
     background: #222;
